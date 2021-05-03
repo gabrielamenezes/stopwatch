@@ -21,7 +21,7 @@ reset.addEventListener('click', () => {
     seconds = 0;
     milliseconds = 0;
     document.getElementById('timer').innerHTML = '<p>00:00:00:00</p>';
-    document.querySelector('.title-change').innerHTML = '<strong>Nooo, I was doing a pretty good</strong>'
+    document.querySelector('.title-change').innerHTML = '<strong>Nooo, I was doing a pretty good job</strong>'
 });
 
 stop.addEventListener('click', () => {
