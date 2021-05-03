@@ -2,10 +2,10 @@ const start = document.querySelector('#start');
 const stop = document.querySelector('#stop');
 const reset = document.querySelector('#reset');
 let timer;
-let hh = 0;
-let mm = 0;
-let ss = 0;
-let ml = 0;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+let milliseconds = 0;
 let timing = 1;
 
 
@@ -16,10 +16,10 @@ start.addEventListener('click', () => {
 
 reset.addEventListener('click', () => {
     clearInterval(timer);
-    hh = 0;
-    mm = 0;
-    ss = 0;
-    ml = 0;
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
+    milliseconds = 0;
     document.getElementById('timer').innerHTML = '<p>00:00:00:00</p>';
     document.querySelector('.title-change').innerHTML = '<strong>Nooo, I was doing a pretty good</strong>'
 });
@@ -30,19 +30,19 @@ stop.addEventListener('click', () => {
 });
 
 function showClock() {
-    ml++;
+    milliseconds++;
 
-    if(ml == 1000) {
-        ml = 0;
-        ss++
-    }else if(ss == 60) {
-        ss = 0;
-        mm++
-    }else if(mm == 60) {
-        mm = 0;
-        hh++
+    if(milliseconds == 1000) {
+        milliseconds = 0;
+        seconds++
+    }else if(seconds == 60) {
+        seconds = 0;
+        minutes++
+    }else if(minutes == 60) {
+        minutes = 0;
+        hours++
     }
 
-    let concat = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss) + ':' + (ml < 10 ? '0' + ml : ml);
+    let concat = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds) + ':' + (milliseconds < 10 ? '0' + milliseconds : milliseconds);
     document.getElementById('timer').innerHTML = '<p>'+concat+'</p>';
 }
