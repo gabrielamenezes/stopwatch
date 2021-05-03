@@ -10,6 +10,7 @@ let timing = 1;
 
 
 start.addEventListener('click', () => {
+    document.querySelector('.title-change').innerHTML = '<strong>Welldone</strong>'
     timer = setInterval(showClock, timing);
 })
 
@@ -19,10 +20,12 @@ reset.addEventListener('click', () => {
     mm = 0;
     ss = 0;
     ml = 0;
-    document.getElementById('timer').innerHTML = '00:00:00:00';
+    document.getElementById('timer').innerHTML = '<p>00:00:00:00</p>';
+    document.querySelector('.title-change').innerHTML = '<strong>Nooo, I was doing a pretty good</strong>'
 });
 
 stop.addEventListener('click', () => {
+    document.querySelector('.title-change').innerHTML = '<strong>Thanks. I was tired. Break Time </strong>'
     clearInterval(timer);
 });
 
